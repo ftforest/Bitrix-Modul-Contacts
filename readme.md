@@ -1,8 +1,8 @@
-###Модуль - ftden45.company.contact
+### Модуль - ftden45.company.contact
 
-###1) установить модуль
+### 1) установить модуль
 
-###2) подключить модуль к init.php
+### 2) подключить модуль к init.php
 ```phpt
 \Bitrix\Main\Loader::includeModule('ftden45.company.contact');
 
@@ -10,7 +10,7 @@ include_once __DIR__ . '/include/functions.php'; // функции из моду
 
 ```
 
-###3) залить папку с файлом в папку local
+### 3) залить папку с файлом в папку local
 ```text
 php_interface/functions.php
 
