@@ -75,30 +75,6 @@ function saveOptions($aTabs,$request,$module_id) {
 if ($request->isPost() && $request['Save'] && check_bitrix_sessid()) {
     saveOptions($aTabs,$request,$module_id);
 }
-if ($request->isPost() && $request['TestStatus'] && check_bitrix_sessid()) {
-    saveOptions($aTabs,$request,$module_id);
-
-    $setOrderId = \COption::GetOptionString('ftden45.testing', "order_id", "");
-    $productIdDelete = 51769;
-    //ExternalSuppliers::onOrderUpdate($setOrderId,[]);
-    if (false) {
-        $order = Sale\Order::load($setOrderId);
-        $basket = $order->getBasket();
-        $basketProducts = [];
-        $basketSuppliersProductsDTO = [];
-        foreach ($basket as $basketItem) {
-            if ($basketItem->getProductId() == $productIdDelete) {
-                $basketItem->delete();
-                $basket->save();
-            }
-            $basketProducts[$basketItem->getProductId()] = $basketItem;//ExternalSupplierBasketProductDTO::newFromBasketProduct($basketItem);
-            echo $basketItem->getProductId()."|";
-        }
-    }// end if
-
-    ExternalSuppliers::onOrderSave($setOrderId);
-}
-
 
 #Визуальный вывод
 
